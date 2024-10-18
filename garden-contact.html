@@ -163,14 +163,32 @@
 
                             <div class="row">
                                 <div class="col-lg-8 offset-lg-2">
-                                    <form class="form-wrapper">
-                                        <input type="text" class="form-control" placeholder="Your name">
-                                        <input type="text" class="form-control" placeholder="Email address">
-                                        <input type="text" class="form-control" placeholder="Phone">
-                                        <input type="text" class="form-control" placeholder="Subject">
-                                        <textarea class="form-control" placeholder="Your message"></textarea>
-                                        <button type="submit" class="btn btn-primary">Send <i class="fa fa-envelope-open-o"></i></button>
+                                    <form action="contact_submit.php" method="POST" class="form-wrapper">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input type="tel" name="phone" class="form-control" placeholder="Phone" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <textarea name="message" class="form-control" placeholder="Your Message" required></textarea>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary mt-3">Send <i class="fa fa-envelope-open-o"></i></button>
                                     </form>
+                                    
+                                    
                                 </div>
                             </div>
                         </div><!-- end page-wrapper -->

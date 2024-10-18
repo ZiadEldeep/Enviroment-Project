@@ -1,3 +1,4 @@
+<?php include 'config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +35,14 @@
 
   <!-- Version Garden CSS for this template -->
   <link href="css/version/garden.css" rel="stylesheet">
-
+<!-- <script> document.getElementById('contactForm').addEventListener('submit', function(event) {
+   // event.preventDefault(); // Comment this out to allow form submission
+   const name = document.getElementById('name').value;
+   const email = document.getElementById('email').value;
+   const message = document.getElementById('message').value;
+   alert(`Thank you, ${name}! Your consultation request has been submitted.`);
+});
+</script> -->
   <!-- Custom styles -->
   <style>
     body {
@@ -184,7 +192,7 @@
                             <a class="nav-link color-green-hover" href="garden-category.html#">Gardening</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link color-green-hover" href="service.html">Service</a>
+                            <a class="nav-link color-green-hover" href="service.php">Service</a>
                         </li>
                         <!-- <li class="nav-item">
                             <a class="nav-link color-green-hover" href="garden-category.html#">Outdoor Living</a>
@@ -203,9 +211,7 @@
             </nav>
         </div><!-- end container -->
     </header><!-- end header -->
-
-  <!-- Services Section -->
-  <section id="services" class="services py-5">
+  <!-- <section id="services" class="services py-5">
     <div class="container fadeIn">
       <h2 class="text-center mb-5">Our Services</h2>
       <div class="row">
@@ -233,12 +239,61 @@
             </div>
           </div>
         </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Air Quality Monitoring</h3>
+              <p class="card-text">We provide air quality monitoring to ensure compliance with environmental standards and safeguard public health.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Water Resource Management</h3>
+              <p class="card-text">Our services help you manage water resources efficiently and sustainably, ensuring minimal environmental impact.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Environmental Risk Assessments</h3>
+              <p class="card-text">We conduct thorough risk assessments to identify potential environmental hazards in your projects.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Ecological Restoration</h3>
+              <p class="card-text">We help restore ecosystems damaged by development, pollution, or climate change.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Environmental Audits</h3>
+              <p class="card-text">Our environmental audits help you comply with regulations and identify areas for improvement in sustainability practices.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Climate Change Mitigation</h3>
+              <p class="card-text">We provide strategies to mitigate the effects of climate change and adapt to future environmental challenges.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </section> -->
+
 
   <!-- Testimonials Section -->
-  <section id="testimonials" class="testimonials py-5 bg-light fadeIn">
+  <!-- <section id="testimonials" class="testimonials py-5 bg-light fadeIn">
     <div class="container">
       <h2 class="text-center mb-5">Client Testimonials</h2>
       <div class="row">
@@ -260,30 +315,46 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- Contact Form Section -->
   <section id="contact" class="contact py-5 fadeIn">
     <div class="container">
       <h2 class="text-center mb-5">Request a Consultation</h2>
-      <form id="contactForm" class="w-75 mx-auto">
-        <div class="form-group">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" class="form-control" required>
-        </div>
+      <form id="contactForm" class="w-75 mx-auto" action="submit_contact.php" method="POST" onsubmit="return validateForm()">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" class="form-control" required>
+    </div>
 
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" class="form-control" required>
-        </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" class="form-control" required>
+    </div>
 
-        <div class="form-group">
-          <label for="message">Consultation Request Details:</label>
-          <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
-        </div>
+    <div class="form-group">
+        <label for="message">Consultation Request Details:</label>
+        <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+    </div>
 
-        <button type="submit" class="btn btn-success btn-block">Send Request</button>
-      </form>
+    <button type="submit" class="btn btn-success btn-block">Send Request</button>
+</form>
+
+<!-- <script>
+function validateForm() {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !message) {
+        alert("All fields are required.");
+        return false; // Prevent form submission
+    }
+    return true; // Allow form submission
+}
+</script> -->
+
+    
     </div>
   </section>
 
@@ -331,7 +402,7 @@
   <!-- JavaScript -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
+  <!-- <script>
     document.getElementById('contactForm').addEventListener('submit', function(event) {
       event.preventDefault();
       const name = document.getElementById('name').value;
@@ -339,7 +410,7 @@
       const message = document.getElementById('message').value;
       alert(`Thank you, ${name}! Your consultation request has been submitted.`);
     });
-  </script>
+  </script> -->
 </body>
 
 </html>

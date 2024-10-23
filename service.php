@@ -179,7 +179,7 @@
 
     <header class="header">
         <div class="container">
-            <nav class="navbar navbar-inverse navbar-toggleable-md">
+        <nav class="navbar navbar-inverse navbar-toggleable-md">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Forest Timemenu" aria-controls="Forest Timemenu" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -204,7 +204,10 @@
                             <a class="nav-link color-green-hover" href="garden-category.html#">Shopping Guides</a>
                         </li>   -->
                         <li class="nav-item">
-                            <a class="nav-link color-green-hover" href="garden-contact.html#">Contact</a>
+                            <a class="nav-link color-green-hover" href="garden-contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link color-green-hover" href="careers.php">Careers</a>
                         </li>
                     </ul>
                 </div>

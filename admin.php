@@ -58,6 +58,9 @@ while ($row = mysqli_fetch_array($result)) {
                         <?php foreach ($columns as $column): ?>
                             <th><?php echo htmlspecialchars($column); ?></th>
                         <?php endforeach; ?>
+                        <?php if ($table === 'applications'): // Adjust the table name if needed ?>
+                            <th>Actions</th> <!-- Column for actions -->
+                        <?php endif; ?>
                     </tr>
                 </thead>
                 <tbody>
@@ -66,6 +69,12 @@ while ($row = mysqli_fetch_array($result)) {
                             <?php foreach ($columns as $column): ?>
                                 <td><?php echo htmlspecialchars($row[$column]); ?></td>
                             <?php endforeach; ?>
+
+                            <?php if ($table === 'applications'): // Adjust the table name if needed ?>
+                                <td>
+                                    <a href="<?php echo htmlspecialchars($row['resume']); ?>" class="btn btn-success btn-sm" download>Download Resume</a>
+                                </td>
+                            <?php endif; ?>
                         </tr>
                     <?php endwhile; ?>
                 </tbody>
